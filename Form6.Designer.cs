@@ -30,8 +30,15 @@
         {
             label1 = new Label();
             button1 = new Button();
-            button2 = new Button();
             label2 = new Label();
+            button3 = new Button();
+            elipseTool1 = new ElipseToolDemo.ElipseTool();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            elipseTool2 = new ElipseToolDemo.ElipseTool();
+            elipseTool3 = new ElipseToolDemo.ElipseTool();
+            elipseTool4 = new ElipseToolDemo.ElipseTool();
             SuspendLayout();
             // 
             // label1
@@ -55,20 +62,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.White;
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button2.ForeColor = Color.Black;
-            button2.Location = new Point(132, 336);
-            button2.Name = "button2";
-            button2.Size = new Size(123, 41);
-            button2.TabIndex = 9;
-            button2.Text = "Sonraki";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -80,14 +73,89 @@
             label2.TabIndex = 10;
             label2.Text = "Hesap oluştur";
             // 
+            // button3
+            // 
+            button3.BackColor = Color.Black;
+            button3.Font = new Font("Calibri", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(25, 144);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 46);
+            button3.TabIndex = 11;
+            button3.Text = "Kadın";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // elipseTool1
+            // 
+            elipseTool1.CornerRadius = 45;
+            elipseTool1.TargetControl = button3;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Black;
+            button4.Font = new Font("Calibri", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(133, 144);
+            button4.Name = "button4";
+            button4.Size = new Size(94, 46);
+            button4.TabIndex = 12;
+            button4.Text = "Erkek";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.Black;
+            button5.Font = new Font("Calibri", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(242, 144);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 46);
+            button5.TabIndex = 13;
+            button5.Text = "Diğer";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.Black;
+            button6.Font = new Font("Calibri", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(24, 206);
+            button6.Name = "button6";
+            button6.Size = new Size(203, 46);
+            button6.TabIndex = 14;
+            button6.Text = "Belirtmek istemiyorum";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // elipseTool2
+            // 
+            elipseTool2.CornerRadius = 45;
+            elipseTool2.TargetControl = button4;
+            // 
+            // elipseTool3
+            // 
+            elipseTool3.CornerRadius = 45;
+            elipseTool3.TargetControl = button5;
+            // 
+            // elipseTool4
+            // 
+            elipseTool4.CornerRadius = 45;
+            elipseTool4.TargetControl = button6;
+            // 
             // Form6
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(447, 748);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(label2);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Form6";
@@ -100,7 +168,14 @@
 
         private Label label1;
         private Button button1;
-        private Button button2;
         private Label label2;
+        private Button button3;
+        private ElipseToolDemo.ElipseTool elipseTool1;
+        private Button button4;
+        private Button button5;
+        private Button button6;
+        private ElipseToolDemo.ElipseTool elipseTool2;
+        private ElipseToolDemo.ElipseTool elipseTool3;
+        private ElipseToolDemo.ElipseTool elipseTool4;
     }
 }

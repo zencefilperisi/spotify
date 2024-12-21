@@ -7,8 +7,8 @@ namespace spotify
         {
             InitializeComponent();
         }
-        //static string constring = "Data Source=hatice\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=TRUE";
-        //SqlConnection connect = new SqlConnection();
+        static string conString = "Data Source=.\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=True;TrustServerCertificate=True";
+        SqlConnection connect = new SqlConnection(conString);
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 form2sec = new Form2();

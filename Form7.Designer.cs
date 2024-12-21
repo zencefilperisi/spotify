@@ -46,7 +46,6 @@
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             button2 = new Button();
-            elipseTool1 = new ElipseToolDemo.ElipseTool();
             SuspendLayout();
             // 
             // label1
@@ -246,11 +245,6 @@
             button2.Text = "Hesap oluştur";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
-            // 
-            // elipseTool1
-            // 
-            elipseTool1.CornerRadius = 40;
-            elipseTool1.TargetControl = button2;
             // 
             // Form7
             // 

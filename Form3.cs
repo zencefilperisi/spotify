@@ -14,7 +14,7 @@ namespace spotify
     public partial class Form3 : Form
     {
 
-        SqlConnection connection = new SqlConnection("Data Source=hatice\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection connection = new SqlConnection("Data Source=.\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=True;TrustServerCertificate=True");
         public Form3()
         {
             InitializeComponent();
@@ -28,12 +28,49 @@ namespace spotify
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
+                {
+                    MessageBox.Show("Lütfen parola girin.", "Uyarı");
+                    return;
+                }
 
-        }
+                if (textBox1.Text.Length < 10)
+                {
+                    MessageBox.Show("Parola en az 10 karakter olmalıdır.", "Uyarı");
+                    return;
+                }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
 
+                string update = "UPDATE kullanici_giris_ekrani SET parola = @parola WHERE parola IS NULL";
+                SqlCommand cmd = new SqlCommand(update, connection);
+
+                cmd.Parameters.AddWithValue("@parola", textBox1.Text);
+                int affected = cmd.ExecuteNonQuery();   // insert, update, delete olaylarından sonra etkilenen satır sayısını int tipinde döndürür
+
+                connection.Close();
+
+                if (affected > 0)
+                {
+                    MessageBox.Show("Kayıt başarılı!", "Bilgi");
+                    Form4 form4 = new Form4();
+                    form4.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Kayıt işlemi başarısız. Lütfen tekrar deneyin.", "Hata");
+                }
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Kayıt hatası: " + hata.Message, "Hata");
+            }
         }
     }
 }

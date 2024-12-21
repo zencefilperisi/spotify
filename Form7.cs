@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +17,20 @@ namespace spotify
         {
             InitializeComponent();
         }
+        static string conString = "Data Source=.\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=True;TrustServerCertificate=True";
+        SqlConnection connect = new SqlConnection(conString);
 
         private void button2_Click(object sender, EventArgs e)
         {
+            connect.Open();
+            string kayit = "insert into kullanici_giris_ekrani (profil_ismi) values(@profilismi)";
+            SqlCommand komut = new SqlCommand(kayit, connect);
+
+            komut.Parameters.AddWithValue("@profilismi", textBox1.Text);
+            komut.ExecuteNonQuery();
+
+            connect.Close();
+
             Anasayfa anasayfa = new Anasayfa();
             anasayfa.Show();
             this.Hide();

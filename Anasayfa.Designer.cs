@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Anasayfa));
             button1 = new Button();
-            elipseTool1 = new ElipseToolDemo.ElipseTool();
             button2 = new Button();
-            elipseTool2 = new ElipseToolDemo.ElipseTool();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
@@ -50,6 +48,7 @@
             label4 = new Label();
             label6 = new Label();
             panel1 = new Panel();
+            button11 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
@@ -68,11 +67,6 @@
             button1.Text = "Tümü";
             button1.UseVisualStyleBackColor = false;
             // 
-            // elipseTool1
-            // 
-            elipseTool1.CornerRadius = 40;
-            elipseTool1.TargetControl = button1;
-            // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(64, 64, 64);
@@ -86,20 +80,15 @@
             button2.UseVisualStyleBackColor = false;
             button2.MouseDown += button2_MouseDown;
             // 
-            // elipseTool2
-            // 
-            elipseTool2.CornerRadius = 40;
-            elipseTool2.TargetControl = button2;
-            // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(64, 64, 64);
             button3.FlatStyle = FlatStyle.Popup;
             button3.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(10, 76);
+            button3.Location = new Point(19, 68);
             button3.Name = "button3";
-            button3.Size = new Size(211, 65);
+            button3.Size = new Size(198, 60);
             button3.TabIndex = 2;
             button3.TextAlign = ContentAlignment.MiddleRight;
             button3.UseVisualStyleBackColor = false;
@@ -111,9 +100,9 @@
             button4.FlatStyle = FlatStyle.Popup;
             button4.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(229, 76);
+            button4.Location = new Point(223, 68);
             button4.Name = "button4";
-            button4.Size = new Size(211, 65);
+            button4.Size = new Size(198, 60);
             button4.TabIndex = 3;
             button4.TextAlign = ContentAlignment.MiddleRight;
             button4.UseVisualStyleBackColor = false;
@@ -125,9 +114,9 @@
             button5.FlatStyle = FlatStyle.Popup;
             button5.Font = new Font("Calibri", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(10, 146);
+            button5.Location = new Point(19, 139);
             button5.Name = "button5";
-            button5.Size = new Size(211, 65);
+            button5.Size = new Size(198, 60);
             button5.TabIndex = 4;
             button5.TextAlign = ContentAlignment.MiddleRight;
             button5.UseVisualStyleBackColor = false;
@@ -139,9 +128,9 @@
             button6.FlatStyle = FlatStyle.Popup;
             button6.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(229, 146);
+            button6.Location = new Point(223, 138);
             button6.Name = "button6";
-            button6.Size = new Size(211, 65);
+            button6.Size = new Size(198, 60);
             button6.TabIndex = 5;
             button6.TextAlign = ContentAlignment.MiddleRight;
             button6.UseVisualStyleBackColor = false;
@@ -153,9 +142,9 @@
             button7.FlatStyle = FlatStyle.Popup;
             button7.Font = new Font("Calibri", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             button7.ForeColor = Color.White;
-            button7.Location = new Point(10, 218);
+            button7.Location = new Point(19, 210);
             button7.Name = "button7";
-            button7.Size = new Size(211, 65);
+            button7.Size = new Size(198, 60);
             button7.TabIndex = 6;
             button7.TextAlign = ContentAlignment.MiddleRight;
             button7.UseVisualStyleBackColor = false;
@@ -167,9 +156,9 @@
             button8.FlatStyle = FlatStyle.Popup;
             button8.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             button8.ForeColor = Color.White;
-            button8.Location = new Point(229, 217);
+            button8.Location = new Point(223, 209);
             button8.Name = "button8";
-            button8.Size = new Size(211, 65);
+            button8.Size = new Size(198, 60);
             button8.TabIndex = 7;
             button8.TextAlign = ContentAlignment.MiddleRight;
             button8.UseVisualStyleBackColor = false;
@@ -181,9 +170,9 @@
             button9.FlatStyle = FlatStyle.Popup;
             button9.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
             button9.ForeColor = Color.White;
-            button9.Location = new Point(12, 289);
+            button9.Location = new Point(19, 283);
             button9.Name = "button9";
-            button9.Size = new Size(211, 65);
+            button9.Size = new Size(198, 60);
             button9.TabIndex = 8;
             button9.TextAlign = ContentAlignment.MiddleRight;
             button9.UseVisualStyleBackColor = false;
@@ -195,9 +184,9 @@
             button10.FlatStyle = FlatStyle.Popup;
             button10.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
             button10.ForeColor = Color.White;
-            button10.Location = new Point(229, 288);
+            button10.Location = new Point(223, 281);
             button10.Name = "button10";
-            button10.Size = new Size(211, 65);
+            button10.Size = new Size(199, 60);
             button10.TabIndex = 9;
             button10.TextAlign = ContentAlignment.MiddleRight;
             button10.UseVisualStyleBackColor = false;
@@ -294,16 +283,35 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button11);
             panel1.Controls.Add(pictureBox11);
+            panel1.Controls.Add(button10);
             panel1.Controls.Add(label6);
+            panel1.Controls.Add(button8);
+            panel1.Controls.Add(button9);
+            panel1.Controls.Add(button6);
             panel1.Controls.Add(pictureBox10);
+            panel1.Controls.Add(button4);
             panel1.Controls.Add(label4);
+            panel1.Controls.Add(button7);
+            panel1.Controls.Add(button5);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
+            panel1.Controls.Add(button3);
             panel1.Location = new Point(-1, 7);
             panel1.Name = "panel1";
-            panel1.Size = new Size(519, 1068);
+            panel1.Size = new Size(524, 804);
             panel1.TabIndex = 27;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(13, 20);
+            button11.Name = "button11";
+            button11.Size = new Size(42, 29);
+            button11.TabIndex = 27;
+            button11.Text = "button11";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // Anasayfa
             // 
@@ -311,23 +319,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.Black;
-            ClientSize = new Size(447, 1032);
+            ClientSize = new Size(447, 748);
             Controls.Add(pictureBox9);
             Controls.Add(label1);
-            Controls.Add(button10);
-            Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panel1);
             Name = "Anasayfa";
             Text = "Anasayfa";
-            Load += Anasayfa_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
@@ -359,5 +358,6 @@
         private Label label4;
         private Label label6;
         private Panel panel1;
+        private Button button11;
     }
 }

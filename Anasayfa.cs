@@ -16,11 +16,6 @@ namespace spotify
         {
             InitializeComponent();
         }
-
-        private void Anasayfa_Load(object sender, EventArgs e)
-        {
-
-        }
         private void button2_MouseDown(object sender, MouseEventArgs e)
         {
             button2.BackColor = Color.LimeGreen;
@@ -79,6 +74,13 @@ namespace spotify
         {
             liste8 liste8 = new liste8();
             liste8.Show();
+            this.Hide();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            profil profilsec = new profil();
+            profilsec.Show();
             this.Hide();
         }
     }

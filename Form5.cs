@@ -14,7 +14,7 @@ namespace spotify
 {
     public partial class Form5 : Form
     {
-        SqlConnection connection = new SqlConnection("Data Source=hatice\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection connection = new SqlConnection("Data Source=.\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=True;TrustServerCertificate=True");
 
         bool isThere;
         public Form5()
@@ -61,6 +61,11 @@ namespace spotify
             {
                 MessageBox.Show("kullanıcı adınız veya şifrenizi yanlış girdiniz.", "Hata");
             }
+        }
+
+        private void txt_eposta_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

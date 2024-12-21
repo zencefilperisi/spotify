@@ -68,6 +68,7 @@
             txt_eposta.Name = "txt_eposta";
             txt_eposta.Size = new Size(384, 28);
             txt_eposta.TabIndex = 2;
+            txt_eposta.TextChanged += txt_eposta_TextChanged;
             // 
             // txt_parola
             // 

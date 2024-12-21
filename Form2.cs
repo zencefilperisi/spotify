@@ -18,7 +18,7 @@ namespace spotify
         {
             InitializeComponent();
         }
-        static string conString = "Data Source=hatice\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=TRUE";
+        static string conString = "Data Source=.\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=True;TrustServerCertificate=True";
         SqlConnection connect = new SqlConnection(conString);
         private void button2_Click(object sender, EventArgs e)
         {
@@ -29,24 +29,29 @@ namespace spotify
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (connect.State == System.Data.ConnectionState.Closed)
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
                 {
-                    connect.Open();
+                    MessageBox.Show("Lütfen e-posta adresinizi girin.", "Uyarı");
+                    return;
                 }
-                    string kayit = "insert into kullanici_giris_ekrani (e_mail) values(@mail)";
-                    SqlCommand komut = new SqlCommand(kayit, connect);
 
-                    komut.Parameters.AddWithValue("@mail", textBox1.Text);
-                    komut.ExecuteNonQuery();
+            connect.Open();
 
-                    connect.Close();
-            }
-            catch(Exception hata)
-            {
-                MessageBox.Show("hata meydana geldi" + hata.Message);
-            }
+                string kayit = "insert into kullanici_giris_ekrani (e_mail) values(@mail)";
+                SqlCommand komut = new SqlCommand(kayit, connect);
+
+                komut.Parameters.AddWithValue("@mail", textBox1.Text);
+                komut.ExecuteNonQuery();
+
+                connect.Close();
+                Form3 form3 = new Form3();  // Go to Form3 for additional registration steps
+                form3.Show();
+                this.Hide();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

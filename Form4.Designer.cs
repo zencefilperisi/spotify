@@ -36,6 +36,7 @@
             panel1 = new Panel();
             textBox1 = new TextBox();
             comboBox2 = new ComboBox();
+            label3 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,7 +78,7 @@
             button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(136, 276);
+            button2.Location = new Point(132, 312);
             button2.Name = "button2";
             button2.Size = new Size(123, 41);
             button2.TabIndex = 9;
@@ -125,12 +126,25 @@
             comboBox2.TabIndex = 12;
             comboBox2.Text = "Seçiniz";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Calibri", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(12, 263);
+            label3.Name = "label3";
+            label3.Size = new Size(381, 42);
+            label3.TabIndex = 12;
+            label3.Text = "Üzgünüz, Spotify'ın yaş gerekçelerini karşılamıyorsun.\r\n\r\n";
+            label3.Visible = false;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(447, 748);
+            Controls.Add(label3);
             Controls.Add(panel1);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -138,6 +152,7 @@
             Controls.Add(label1);
             Name = "Form4";
             Text = "Doğum tarihi";
+            Load += Form4_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -154,5 +169,6 @@
         private Panel panel1;
         private TextBox textBox1;
         private ComboBox comboBox2;
+        private Label label3;
     }
 }

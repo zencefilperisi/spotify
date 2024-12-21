@@ -140,6 +140,7 @@
             Controls.Add(label1);
             Name = "Form2";
             Text = "Ücretsiz kaydol";
+            Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
         }
