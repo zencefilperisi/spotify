@@ -83,5 +83,47 @@ namespace spotify
             profilsec.Show();
             this.Hide();
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            daylist daylistsec = new daylist();
+            daylistsec.Show();
+            this.Hide();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            birdaha birdahasec = new birdaha();
+            birdahasec.Show();
+            this.Hide();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            eskifavoriler eski = new eskifavoriler();
+            eski.Show();
+            this.Hide();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Ara arabuton = new Ara();
+            arabuton.Show();
+            this.Hide();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Kitaplığın kitaplık = new Kitaplığın();
+            kitaplık.Show();
+            this.Hide();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Anasayfa anasayfa = new Anasayfa();
+            anasayfa.Show();
+            this.Hide();
+        }
     }
 }

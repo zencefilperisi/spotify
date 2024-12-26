@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Anasayfa));
             button1 = new Button();
             button2 = new Button();
@@ -49,6 +50,10 @@
             label6 = new Label();
             panel1 = new Panel();
             button11 = new Button();
+            ımageList1 = new ImageList(components);
+            button12 = new Button();
+            button13 = new Button();
+            button14 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
@@ -197,7 +202,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 383);
+            label1.Location = new Point(13, 370);
             label1.Name = "label1";
             label1.Size = new Size(179, 24);
             label1.TabIndex = 18;
@@ -206,12 +211,13 @@
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(12, 421);
+            pictureBox9.Location = new Point(19, 415);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(156, 159);
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox9.TabIndex = 19;
             pictureBox9.TabStop = false;
+            pictureBox9.Click += pictureBox9_Click;
             // 
             // pictureBox10
             // 
@@ -222,6 +228,7 @@
             pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox10.TabIndex = 20;
             pictureBox10.TabStop = false;
+            pictureBox10.Click += pictureBox10_Click;
             // 
             // pictureBox11
             // 
@@ -232,6 +239,7 @@
             pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox11.TabIndex = 21;
             pictureBox11.TabStop = false;
+            pictureBox11.Click += pictureBox11_Click;
             // 
             // label2
             // 
@@ -283,7 +291,9 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(pictureBox9);
             panel1.Controls.Add(button11);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox11);
             panel1.Controls.Add(button10);
             panel1.Controls.Add(label6);
@@ -300,7 +310,7 @@
             panel1.Controls.Add(button3);
             panel1.Location = new Point(-1, 7);
             panel1.Name = "panel1";
-            panel1.Size = new Size(524, 804);
+            panel1.Size = new Size(524, 645);
             panel1.TabIndex = 27;
             // 
             // button11
@@ -313,6 +323,41 @@
             button11.UseVisualStyleBackColor = true;
             button11.Click += button11_Click;
             // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "461b6370-85bf-495e-95fd-00252245091a.jpg");
+            // 
+            // button12
+            // 
+            button12.Image = (Image)resources.GetObject("button12.Image");
+            button12.Location = new Point(333, 671);
+            button12.Name = "button12";
+            button12.Size = new Size(67, 44);
+            button12.TabIndex = 28;
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
+            // button13
+            // 
+            button13.Location = new Point(197, 671);
+            button13.Name = "button13";
+            button13.Size = new Size(67, 44);
+            button13.TabIndex = 29;
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
+            // 
+            // button14
+            // 
+            button14.Location = new Point(53, 671);
+            button14.Name = "button14";
+            button14.Size = new Size(67, 44);
+            button14.TabIndex = 30;
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
+            // 
             // Anasayfa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -320,8 +365,9 @@
             AutoScroll = true;
             BackColor = Color.Black;
             ClientSize = new Size(447, 748);
-            Controls.Add(pictureBox9);
-            Controls.Add(label1);
+            Controls.Add(button14);
+            Controls.Add(button13);
+            Controls.Add(button12);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panel1);
@@ -333,7 +379,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -359,5 +404,9 @@
         private Label label6;
         private Panel panel1;
         private Button button11;
+        private ImageList ımageList1;
+        private Button button12;
+        private Button button13;
+        private Button button14;
     }
 }

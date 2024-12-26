@@ -29,14 +29,18 @@ namespace spotify
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
                 if (string.IsNullOrWhiteSpace(textBox1.Text))
                 {
                     MessageBox.Show("Lütfen e-posta adresinizi girin.", "Uyarı");
                     return;
                 }
 
-            connect.Open();
-
+                if (connect.State == System.Data.ConnectionState.Closed)
+                {
+                    connect.Open();
+                }
                 string kayit = "insert into kullanici_giris_ekrani (e_mail) values(@mail)";
                 SqlCommand komut = new SqlCommand(kayit, connect);
 
@@ -44,9 +48,16 @@ namespace spotify
                 komut.ExecuteNonQuery();
 
                 connect.Close();
+                MessageBox.Show("E-posta kaydedildi!", "Bilgi");
+
                 Form3 form3 = new Form3();  // Go to Form3 for additional registration steps
                 form3.Show();
                 this.Hide();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show("Kayıt hatası: " + hata.Message, "Hata");
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)

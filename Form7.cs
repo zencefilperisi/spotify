@@ -23,7 +23,7 @@ namespace spotify
         private void button2_Click(object sender, EventArgs e)
         {
             connect.Open();
-            string kayit = "insert into kullanici_giris_ekrani (profil_ismi) values(@profilismi)";
+            string kayit = "UPDATE kullanici_giris_ekrani SET profil_ismi = @profilismi WHERE profil_ismi is NULL";
             SqlCommand komut = new SqlCommand(kayit, connect);
 
             komut.Parameters.AddWithValue("@profilismi", textBox1.Text);

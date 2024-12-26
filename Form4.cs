@@ -39,6 +39,12 @@ namespace spotify
                 MessageBox.Show("Doğum yılınız 4 haneli olmalı!", "Uyarı");
                 return;
              }
+             
+             if(textBox1.Text.Length > 4)
+            {
+                MessageBox.Show("Doğum yılınız 4 haneli olmalı!", "Uyarı");
+                return;
+            }
 
             int tarih = Convert.ToInt32(textBox1.Text);
             if (tarih >= 2007)
@@ -52,17 +58,19 @@ namespace spotify
                 connect.Open();
              }
 
-            string kayit = "insert into kullanici_giris_ekrani (dogum_tarihi) values (@dogumtarihi)";
+            string kayit = "UPDATE kullanici_giris_ekrani SET dogum_tarihi = @dogumtarihi WHERE dogum_tarihi is NULL";
             SqlCommand komut = new SqlCommand(kayit, connect);
 
             komut.Parameters.AddWithValue("@dogumtarihi", textBox1.Text);
             komut.ExecuteNonQuery();
 
-            connect.Close();
+            int affected = komut.ExecuteNonQuery();
 
             Form6 form6 = new Form6();
             form6.Show();
             this.Hide();
+
+            connect.Close();
         }
         private void button1_Click_1(object sender, EventArgs e)
         {

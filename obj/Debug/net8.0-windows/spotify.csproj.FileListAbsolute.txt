@@ -69,3 +69,7 @@ C:\Users\User\source\repos\spotify\obj\Debug\net8.0-windows\refint\spotify.dll
 C:\Users\User\source\repos\spotify\obj\Debug\net8.0-windows\spotify.pdb
 C:\Users\User\source\repos\spotify\obj\Debug\net8.0-windows\spotify.genruntimeconfig.cache
 C:\Users\User\source\repos\spotify\obj\Debug\net8.0-windows\ref\spotify.dll
+C:\Users\User\source\repos\spotify\obj\Debug\net8.0-windows\spotify.Kitaplığın.resources
+C:\Users\User\source\repos\spotify\obj\Debug\net8.0-windows\spotify.Ara.resources
+C:\Users\User\source\repos\spotify\obj\Debug\net8.0-windows\spotify.daylist.resources
+C:\Users\User\source\repos\spotify\obj\Debug\net8.0-windows\spotify.Form8.resources
