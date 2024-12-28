@@ -32,13 +32,9 @@
             button1 = new Button();
             label2 = new Label();
             button3 = new Button();
-            elipseTool1 = new ElipseToolDemo.ElipseTool();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
-            elipseTool2 = new ElipseToolDemo.ElipseTool();
-            elipseTool3 = new ElipseToolDemo.ElipseTool();
-            elipseTool4 = new ElipseToolDemo.ElipseTool();
             SuspendLayout();
             // 
             // label1
@@ -86,11 +82,6 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
-            // elipseTool1
-            // 
-            elipseTool1.CornerRadius = 45;
-            elipseTool1.TargetControl = button3;
-            // 
             // button4
             // 
             button4.BackColor = Color.Black;
@@ -130,21 +121,6 @@
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
-            // elipseTool2
-            // 
-            elipseTool2.CornerRadius = 45;
-            elipseTool2.TargetControl = button4;
-            // 
-            // elipseTool3
-            // 
-            elipseTool3.CornerRadius = 45;
-            elipseTool3.TargetControl = button5;
-            // 
-            // elipseTool4
-            // 
-            elipseTool4.CornerRadius = 45;
-            elipseTool4.TargetControl = button6;
-            // 
             // Form6
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -170,12 +146,8 @@
         private Button button1;
         private Label label2;
         private Button button3;
-        private ElipseToolDemo.ElipseTool elipseTool1;
         private Button button4;
         private Button button5;
         private Button button6;
-        private ElipseToolDemo.ElipseTool elipseTool2;
-        private ElipseToolDemo.ElipseTool elipseTool3;
-        private ElipseToolDemo.ElipseTool elipseTool4;
     }
 }

@@ -33,7 +33,6 @@
             txt_eposta = new TextBox();
             txt_parola = new TextBox();
             button1 = new Button();
-            elipseTool1 = new ElipseToolDemo.ElipseTool();
             button2 = new Button();
             SuspendLayout();
             // 
@@ -68,7 +67,6 @@
             txt_eposta.Name = "txt_eposta";
             txt_eposta.Size = new Size(384, 28);
             txt_eposta.TabIndex = 2;
-            txt_eposta.TextChanged += txt_eposta_TextChanged;
             // 
             // txt_parola
             // 
@@ -89,11 +87,6 @@
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // elipseTool1
-            // 
-            elipseTool1.CornerRadius = 43;
-            elipseTool1.TargetControl = null;
             // 
             // button2
             // 
@@ -132,7 +125,6 @@
         private TextBox txt_eposta;
         private TextBox txt_parola;
         private Button button1;
-        private ElipseToolDemo.ElipseTool elipseTool1;
         private Button button2;
     }
 }

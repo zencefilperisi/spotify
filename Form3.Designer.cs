@@ -33,10 +33,8 @@
             label2 = new Label();
             label3 = new Label();
             button2 = new Button();
-            elipseTool1 = new ElipseToolDemo.ElipseTool();
             button1 = new Button();
             label4 = new Label();
-            elipseTool2 = new ElipseToolDemo.ElipseTool();
             SuspendLayout();
             // 
             // label1
@@ -92,11 +90,6 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // elipseTool1
-            // 
-            elipseTool1.CornerRadius = 45;
-            elipseTool1.TargetControl = button2;
-            // 
             // button1
             // 
             button1.Location = new Point(12, 16);
@@ -117,11 +110,6 @@
             label4.Size = new Size(127, 24);
             label4.TabIndex = 8;
             label4.Text = "Hesap oluştur";
-            // 
-            // elipseTool2
-            // 
-            elipseTool2.CornerRadius = 40;
-            elipseTool2.TargetControl = button2;
             // 
             // Form3
             // 
@@ -150,9 +138,7 @@
         private Label label2;
         private Label label3;
         private Button button2;
-        private ElipseToolDemo.ElipseTool elipseTool1;
         private Button button1;
         private Label label4;
-        private ElipseToolDemo.ElipseTool elipseTool2;
     }
 }

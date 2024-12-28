@@ -32,10 +32,8 @@
             label2 = new Label();
             textBox1 = new TextBox();
             label3 = new Label();
-            elipseTool1 = new ElipseToolDemo.ElipseTool();
             label4 = new Label();
             button1 = new Button();
-            elipseTool2 = new ElipseToolDemo.ElipseTool();
             button2 = new Button();
             SuspendLayout();
             // 
@@ -80,11 +78,6 @@
             label3.TabIndex = 3;
             label3.Text = "label3";
             // 
-            // elipseTool1
-            // 
-            elipseTool1.CornerRadius = 30;
-            elipseTool1.TargetControl = textBox1;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -109,11 +102,6 @@
             button1.Text = "Sonraki";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // elipseTool2
-            // 
-            elipseTool2.CornerRadius = 45;
-            elipseTool2.TargetControl = button1;
             // 
             // button2
             // 
@@ -151,10 +139,8 @@
         private Label label2;
         private TextBox textBox1;
         private Label label3;
-        private ElipseToolDemo.ElipseTool elipseTool1;
         private Label label4;
         private Button button1;
-        private ElipseToolDemo.ElipseTool elipseTool2;
         private Button button2;
     }
 }

@@ -35,9 +35,6 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            elipseTool1 = new ElipseToolDemo.ElipseTool();
-            elipseTool2 = new ElipseToolDemo.ElipseTool();
-            elipseTool3 = new ElipseToolDemo.ElipseTool();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             label2 = new Label();
@@ -120,21 +117,6 @@
             button4.TabIndex = 32;
             button4.Text = "Sanatçılar";
             button4.UseVisualStyleBackColor = false;
-            // 
-            // elipseTool1
-            // 
-            elipseTool1.CornerRadius = 40;
-            elipseTool1.TargetControl = button1;
-            // 
-            // elipseTool2
-            // 
-            elipseTool2.CornerRadius = 40;
-            elipseTool2.TargetControl = button2;
-            // 
-            // elipseTool3
-            // 
-            elipseTool3.CornerRadius = 40;
-            elipseTool3.TargetControl = button4;
             // 
             // pictureBox1
             // 
@@ -264,9 +246,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private ElipseToolDemo.ElipseTool elipseTool1;
-        private ElipseToolDemo.ElipseTool elipseTool2;
-        private ElipseToolDemo.ElipseTool elipseTool3;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label label2;

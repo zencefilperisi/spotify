@@ -35,12 +35,12 @@ namespace spotify
             anasayfa.Show();
             this.Hide();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Form6 form6sec = new Form6();
             form6sec.Show();
             this.Hide();
         }
+
     }
 }

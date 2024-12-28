@@ -296,6 +296,5 @@
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private Button button2;
-        private ElipseToolDemo.ElipseTool elipseTool1;
     }
 }

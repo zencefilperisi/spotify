@@ -16,9 +16,6 @@
     <Compile Update="daylist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ElipseTool.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="eskifavoriler.cs">
       <SubType>Form</SubType>
     </Compile>

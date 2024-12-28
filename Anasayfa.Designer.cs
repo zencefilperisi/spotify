@@ -383,9 +383,7 @@
 
         #endregion
         private Button button1;
-        private ElipseToolDemo.ElipseTool elipseTool1;
         private Button button2;
-        private ElipseToolDemo.ElipseTool elipseTool2;
         private Button button3;
         private Button button4;
         private Button button5;

@@ -33,8 +33,6 @@
             label1 = new Label();
             label2 = new Label();
             button1 = new Button();
-            elipseTool1 = new ElipseToolDemo.ElipseTool();
-            elipseTool2 = new ElipseToolDemo.ElipseTool();
             button2 = new Button();
             label3 = new Label();
             label4 = new Label();
@@ -86,16 +84,6 @@
             button1.Text = "Ücretsiz kaydol";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // elipseTool1
-            // 
-            elipseTool1.CornerRadius = 49;
-            elipseTool1.TargetControl = button1;
-            // 
-            // elipseTool2
-            // 
-            elipseTool2.CornerRadius = 49;
-            elipseTool2.TargetControl = null;
             // 
             // button2
             // 
@@ -173,8 +161,6 @@
         private Label label1;
         private Label label2;
         private Button button1;
-        private ElipseToolDemo.ElipseTool elipseTool1;
-        private ElipseToolDemo.ElipseTool elipseTool2;
         private Button button2;
         private Label label3;
         private Label label4;

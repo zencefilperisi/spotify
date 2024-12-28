@@ -62,10 +62,5 @@ namespace spotify
                 MessageBox.Show("kullanıcı adınız veya şifrenizi yanlış girdiniz.", "Hata");
             }
         }
-
-        private void txt_eposta_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

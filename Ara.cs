@@ -13,7 +13,7 @@ namespace spotify
 {
     public partial class Ara : Form
     {
-        static string conString = "Data Source=.\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=True;TrustServerCertificate=True";
+        static string conString = "Data Source=.\\SQLEXPRESS; Initial Catalog=spotify; Integrated Security=True; TrustServerCertificate=True; Encrypt=False";
         SqlConnection connect = new SqlConnection(conString);
 
         Button btn;
@@ -30,62 +30,108 @@ namespace spotify
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-            if (textBox1.Text != "")
+            try
             {
-                panel1.Controls.Clear();
-                int l = 0;
-                connect.Open();
-                SqlCommand cmd = new SqlCommand("Select s.sarki_no, s.sarki_adi, s.sanatci_no, s.kapak_foto, s.sarki_yolu, Sa.sanatci_adi from Sarki s, Sanatci Sa where sarki_adi like '" + this.Text + " a%' and Sa.sanatci_no = s.sanatci_no", connect);
-                SqlDataReader reader = cmd.ExecuteReader();
-                int a = 0;
-                while (reader.Read())
+                if (textBox1.Text != "")
                 {
-                    Label lbl = new Label();
-                    lbl.ForeColor = Color.White;
-                    lbl.Location = new Point(88, 51 + l);
-                    lbl.Name = "lblDinamik";
-                    lbl.BackColor = Color.Transparent;
-                    lbl.Text = reader["sarki_adi"].ToString().TrimEnd();
-                    panel1.Controls.Add(lbl);
+                    panel1.Controls.Clear();
+                    int l = 0;
 
-                    Label lbl2 = new Label();
-                    lbl2.ForeColor = Color.White;
-                    lbl2.Location = new Point(88, 74 + l);
-                    lbl2.Name = "lbl2Dinamik";
-                    lbl2.BackColor = Color.Transparent;
-                    lbl2.Text = reader["sanatci_adi"].ToString().TrimEnd();
-                    panel1.Controls.Add(lbl2);
+                    // Make sure connection is closed before opening
+                    if (connect.State == ConnectionState.Open)
+                    {
+                        connect.Close();
+                    }
+                    connect.Open();
 
-                    PictureBox pcbx = new PictureBox();
-                    pcbx.Name = "pcbxDinamik";
-                    pcbx.Size = new Size(68, 60);
-                    pcbx.Location = new Point(3, 37 + l);
-                    pcbx.Image = Image.FromFile(reader["kapak_foto"].ToString().TrimEnd());
-                    pcbx.SizeMode = PictureBoxSizeMode.StretchImage;
-                    panel1.Controls.Add(pcbx);
+                    SqlCommand cmd = new SqlCommand(
+                        "SELECT s.sarki_no, s.sarki_adi, s.sanatci_no, s.kapak_foto, s.sarki_yolu, Sa.sanatci_adi " +
+                        "FROM [dbo].[sarki] s " +
+                        "INNER JOIN [dbo].[sanatci] Sa ON Sa.sanatci_no = s.sanatci_no " +
+                        "WHERE s.sarki_adi LIKE @searchTerm OR Sa.sanatci_adi LIKE @searchTerm", connect);
 
-                    btn = new Button();
-                    btn.Font = new Font(btn.Font.FontFamily, 10);
-                    btn.Name = "btn" + a;
-                    btn.Text = reader["sarki_adi"].ToString().TrimEnd();
-                    btn.Size = new Size(59, 53);
-                    btn.Location = new Point(75, 48 + l);
-                    btn.FlatStyle = FlatStyle.Flat;
-                    btn.FlatAppearance.BorderSize = 0;
-                    btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                    cmd.Parameters.AddWithValue("@searchTerm", "%" + textBox1.Text + "%");
 
-                    btn.Click += Btn_Click;
-                    panel1.Controls.Add(btn);
-                    l += 100;
-                    a++;
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        int a = 0;
+                        while (reader != null && reader.Read())
+                        {
+                            var sarki_adi = reader["sarki_adi"]?.ToString()?.TrimEnd() ?? "";
+                            var sanatci_adi = reader["sanatci_adi"]?.ToString()?.TrimEnd() ?? "";
+                            var kapak_foto = reader["kapak_foto"]?.ToString()?.TrimEnd() ?? "";
+
+                            Label lbl = new Label();
+                            lbl.ForeColor = Color.White;
+                            lbl.Location = new Point(88, 51 + l);
+                            lbl.Name = "lblDinamik";
+                            lbl.BackColor = Color.Transparent;
+                            lbl.Text = sarki_adi;
+                            panel1.Controls.Add(lbl);
+
+                            Label lbl2 = new Label();
+                            lbl2.ForeColor = Color.White;
+                            lbl2.Location = new Point(88, 74 + l);
+                            lbl2.Name = "lbl2Dinamik";
+                            lbl2.BackColor = Color.Transparent;
+                            lbl2.Text = sanatci_adi;
+                            panel1.Controls.Add(lbl2);
+
+                            PictureBox pcbx = new PictureBox();
+                            pcbx.Name = "pcbxDinamik";
+                            pcbx.Size = new Size(68, 60);
+                            pcbx.Location = new Point(3, 37 + l);
+                            if (File.Exists(kapak_foto))
+                            {
+                                pcbx.Image = Image.FromFile(kapak_foto);
+                            }
+                            pcbx.SizeMode = PictureBoxSizeMode.StretchImage;
+                            panel1.Controls.Add(pcbx);
+
+                            btn = new Button();
+                            btn.Font = new Font(btn.Font.FontFamily, 10);
+                            btn.Name = "btn" + a;
+                            btn.Text = sarki_adi;
+                            btn.Size = new Size(300, 80);
+                            btn.Location = new Point(75, 37 + l);
+                            btn.FlatStyle = FlatStyle.Flat;
+                            btn.FlatAppearance.BorderSize = 0;
+                            btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                            btn.BackColor = Color.Transparent;
+                            btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
+                            btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(60, 60, 60);
+                            btn.Cursor = Cursors.Hand;
+
+                            btn.Click += Btn_Click;
+                            panel1.Controls.Add(btn);
+                            btn.BringToFront();
+                            lbl.BringToFront();
+                            lbl2.BringToFront();
+
+                            l += 100;
+                            a++;
+                        }
+                    }
+                    connect.Close();
                 }
-                connect.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arama sırasında bir hata oluştu: " + ex.Message);
+            }
+            finally
+            {
+                if (connect.State == ConnectionState.Open)
+                {
+                    connect.Close();
+                }
             }
         }
         public void Btn_Click(object sender, EventArgs e)
         {
+            Button clickedButton = (Button)sender;
             Form8 form8sec = new Form8();
+            form8sec.Text = clickedButton.Text;
             form8sec.Show();
             this.Hide();
         }
